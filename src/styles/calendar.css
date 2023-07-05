@@ -109,6 +109,7 @@ body {
 }
 
 div.container {
+  height: 800px;
   width: 87vw;
   display: flex;
   flex-direction: column;
@@ -121,7 +122,6 @@ div.container {
 }
 div.container .month {
   width: 80vw;
-  height: 12vh;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-evenly;
@@ -197,7 +197,7 @@ div.container .content .left .calendar .days {
 }
 div.container .content .left .calendar .days .day {
   width: 14.2857142857%;
-  height: 11vh;
+  height: 10vh;
   min-height: 60px;
   display: flex;
   justify-content: center;
@@ -242,7 +242,7 @@ div.container .content .left .calendar .days .active::before {
   border-radius: 3px;
   z-index: -1;
   width: 102%;
-  height: 11.1vh;
+  height: 10vh;
 }
 div.container .content .left .appointment {
   position: relative;
@@ -262,26 +262,27 @@ div.container .content .left .day:hover {
   color: white;
 }
 div.container .content .left .goto {
+  height: 5vh;
   width: 48vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 3vw;
   background: #f5ebe4;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-  margin-bottom: 8px;
 }
 div.container .content .left .goto .gotoDate .dateInput {
-  padding: 10px;
+  padding: 5px;
   border: 1px solid orange;
   border-radius: 5px;
   border: none;
   background: #d9d9d9;
   border-radius: 40px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 div.container .content .left .goto .gotoDate .gotoButton {
-  padding: 10px 1.2vw;
+  padding: 5px 1.2vw;
   color: white;
   border: none;
   font-size: 1.2rem;
@@ -289,7 +290,7 @@ div.container .content .left .goto .gotoDate .gotoButton {
   border-radius: 40px;
 }
 div.container .content .left .goto .todayButton {
-  padding: 10px 1.2vw;
+  padding: 5px 1.2vw;
   color: white;
   border: none;
   font-size: 1.2rem;
@@ -444,7 +445,7 @@ div.container .content .addOnBtn {
   height: 60px;
   cursor: pointer;
   position: absolute;
-  bottom: 0px;
+  bottom: 65px;
   right: 90px;
   opacity: 0.6;
 }
