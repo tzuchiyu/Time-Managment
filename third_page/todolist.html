@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./todolist.css" />
+    <link rel="stylesheet" href="./pomodoro.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="topBar">
+      <div class="icon">
+        <img src="../img/logo.png" />
+        <div id="weatherContainer">
+          <select class="area"></select>
+          <p>Temp: <span class="tem"></span></p>
+          <!-- <p>體感溫度: <span class="feel-like"></span></p> -->
+          <!-- <p>濕度: <span class="humidity"></span></p> -->
+        </div>
+      </div>
+      <button id="logIn" onclick="logIn()">Log in</button>
+    </div>
+    <div class="sideBar">
+      <a class="bar1" href="../index/index.html">
+        <img
+          src="https://img.icons8.com/material-outlined/50/344863/home-page.png"
+        />
+      </a>
+
+      <a class="bar2" href="../second_page/calendar.html">
+        <img
+          src="https://img.icons8.com/material-rounded/50/344863/tear-off-calendar.png"
+      /></a>
+      <a class="bar3" href="../third_page/todolist.html"
+        ><img src="https://img.icons8.com/windows/50/344863/todo-list.png"
+      /></a>
+      <a class="bar4" href="#pomodoro"
+        ><img
+          src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/50/344863/external-pomodoro-date-and-time-tanah-basah-glyph-tanah-basah.png"
+      /></a>
+    </div>
+    <header>
+      <h1>Todo List</h1>
+    </header>
+
+    <main>
+      <div class="filter">
+        <form>
+          <input type="text" placeholder="What's your goal ?" />
+          <input type="number" mix="1" max="12" placeholder="MM" required />
+          <input type="number" mix="1" max="31" placeholder="DD" required />
+          <button>Add into List</button>
+        </form>
+
+        <div class="sort">
+          <button>Sort By Time</button>
+        </div>
+
+        <section></section>
+      </div>
+      <form class="signInForm" style="display: none">
+        <div class="signInIcon">
+          <img
+            src="https://img.icons8.com/material-rounded/120/344863/user.png"
+          />
+        </div>
+        <div class="signInContent">
+          <p class="formTitle">Sign in</p>
+          <br />
+          <div class="formContent">
+            <input type="email" id="email" placeholder="Email" />
+            <br />
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <br />
+          <button class="signInBtn">Sign in</button>
+        </div>
+      </form>
+    </main>
+    <div class="warningBox" style="visibility: hidden">
+      <div class="warningIcon">
+        <i class="fa-solid fa-circle-exclamation"></i>
+      </div>
+      <div class="warningText">
+        <p class="warningTitle">WARNING</p>
+        <p class="warningWord">Are you sure you want to delete this item?</p>
+        <div class="warningButton">
+          <button class="yesButton">Yes</button>
+          <button class="noButton">No</button>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+    <div id="pomodoro">
+      <div class="title"><h1>Pomodoro</h1></div>
+      <div class="container">
+        <div class="buttons">
+          <button class="work" onclick="start()">Work</button>
+          <button class="shortBreak">Short Break</button>
+          <button class="longBreak">Long Break</button>
+        </div>
+
+        <div class="timer">
+          <div class="time">
+            <span class="minutes">25</span>
+            <span class="colon">:</span>
+            <span class="seconds">00</span>
+          </div>
+          <div class="filler"></div>
+        </div>
+        <button class="stop">Stop</button>
+      </div>
+    </div>
+  </body>
+  <script src="./todolist.js"></script>
+  <script src="./pomodoro.js"></script>
+</html>

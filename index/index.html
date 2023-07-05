@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小專</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+
+  <body onload="startTime()" id="top">
+    <div class="topBar">
+      <div class="icon">
+        <img src="../img/logo.png" />
+        <div id="weatherContainer">
+          <select class="area"></select>
+          <p>Temp: <span class="tem"></span></p>
+          <!-- <p>體感溫度: <span class="feel-like"></span></p> -->
+          <!-- <p>濕度: <span class="humidity"></span></p> -->
+        </div>
+      </div>
+      <button id="logIn" onclick="logIn()">Log in</button>
+    </div>
+    <div class="sideBar">
+      <a class="bar1" href="./index.html">
+        <img
+          src="https://img.icons8.com/material-outlined/50/344863/home-page.png"
+        />
+      </a>
+
+      <a class="bar2" href="../second_page/calendar.html">
+        <img
+          src="https://img.icons8.com/material-rounded/50/344863/tear-off-calendar.png"
+      /></a>
+      <a class="bar3" href="../third_page/todolist.html"
+        ><img src="https://img.icons8.com/windows/50/344863/todo-list.png"
+      /></a>
+      <a class="bar4" href="../third_page/todolist.html#pomodoro"
+        ><img
+          src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/50/344863/external-pomodoro-date-and-time-tanah-basah-glyph-tanah-basah.png"
+      /></a>
+    </div>
+    <div class="totop">
+      <a href="#top">
+        <img src="https://img.icons8.com/metro/f5ebe4/null/up--v1.png" />
+      </a>
+    </div>
+
+    <main class="main">
+      <div class="topTitle">
+        <div class="topTitle1">Time Managment</div>
+        <div class="topTitle2">
+          <div class="tt1">- Master your time, master your life.</div>
+          <div class="tt2">Learn effective time management. -</div>
+        </div>
+      </div>
+      <div class="clockContainer">
+        <div id="clock" class="animate__animated animate__bounceInDown"></div>
+      </div>
+      <div id="app">
+        <div class="title">
+          <div class="title1">Why</div>
+          <div class="title2">should we learn</div>
+          <div class="title3">Time Managment?</div>
+        </div>
+        <div class="image">
+          <img src="../img/1toa-heftiba-QnUywvDdI1o-unsplash.jpg" alt="" />
+        </div>
+      </div>
+      <div class="paragraph">
+        <ul class="paraContents">
+          <li>
+            <div class="paraContent">Helps with time management</div>
+          </li>
+          <li>
+            <div class="paraContent">Increases productivity</div>
+          </li>
+          <li>
+            <div class="paraContent">Reduces stress</div>
+          </li>
+        </ul>
+        <ul class="paraContents">
+          <li>
+            <div class="paraContent">Enhances focus and concentration</div>
+          </li>
+          <li>
+            <div class="paraContent">Reduces burnout and fatigue</div>
+          </li>
+        </ul>
+        <img
+          src="../img/artem-riasnianskyi-8fvDJw3jrcI-unsplash.png"
+          class="clockImg"
+        />
+      </div>
+      <div class="cardTitle">- Books Recommendation -</div>
+      <div class="cardContainer">
+        <div class="cardBox">
+          <div class="card">
+            <a
+              href="https://www.books.com.tw/products/0010844785"
+              target="_blank"
+              ><img src="../img/image 1.png"
+            /></a>
+          </div>
+          <div class="card">
+            <a
+              href="https://www.books.com.tw/products/0010857669?sloc=main"
+              target="_blank"
+            >
+              <img src="../img/image 3.png"
+            /></a>
+          </div>
+          <div class="card">
+            <img src="../img/image 4.png" />
+          </div>
+          <div class="card">
+            <img src="../img/image 5.png" />
+          </div>
+          <div class="card">
+            <img src="../img/image 6.png" />
+          </div>
+        </div>
+      </div>
+      <div class="ytTitle">- Youtube Recommendation -</div>
+      <div class="ytContainer carousel">
+        <div class="ytVideo carousel__inner">
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/rnVFwPRlrsw"
+            ></iframe>
+            <div class="videoContent">
+              The Ultimate Guide to Pomodoro (Student Edition).
+            </div>
+          </div>
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/8Y2XrFLg4cY"
+            ></iframe>
+            <div class="videoContent">
+              Why the Pomodoro Technique REALLY Works ?
+            </div>
+          </div>
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/3FjIuPMQzxo"
+            ></iframe>
+            <div class="videoContent">
+              What is a Pomodoro and How Can it Help with ADHD?
+            </div>
+          </div>
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/Z_Lz6AFgeFE"
+            ></iframe>
+            <div class="videoContent">
+              A To-Do Lists is an essential tool to help you keep track of your
+              tasks and activities.
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="signInForm" style="display: none">
+        <div class="signInIcon">
+          <img
+            src="https://img.icons8.com/material-rounded/120/344863/user.png"
+          />
+        </div>
+        <div class="signInContent">
+          <p class="formTitle">Sign in</p>
+          <br />
+          <div class="formContent">
+            <input type="email" id="email" placeholder="Email" />
+            <br />
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <br />
+          <button class="signInBtn">Sign in</button>
+        </div>
+      </form>
+      <footer>
+        <div class="icon">
+          <img src="../img/logo.png" />
+        </div>
+        <div class="social">
+          <h2>SOCIAL MEDIA</h2>
+          <div class="icons">
+            <div class="fb">
+              <img src="../img/fb.png" />
+              <p>Facebook</p>
+            </div>
+            <div class="ig">
+              <img src="../img/ig.png" alt="" />
+              <p>Instagram</p>
+            </div>
+            <div class="twitter">
+              <img src="../img/twitter.png" alt="" />
+              <p>Twitter</p>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h2>Content</h2>
+          <div class="para">
+            <p>Home</p>
+            <p>Calendar</p>
+            <p>Todolist</p>
+            <p>Pomodoro</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <div class="filter"></div>
+  </body>
+  <script src="./index.js"></script>
+</html>

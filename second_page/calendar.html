@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./calendar.css" />
+  </head>
+
+  <body>
+    <div class="topBar">
+      <div class="icon">
+        <img src="../img/logo.png" />
+        <div id="weatherContainer">
+          <select class="area"></select>
+          <p>Temp: <span class="tem"></span></p>
+          <!-- <p>體感溫度: <span class="feel-like"></span></p> -->
+          <!-- <p>濕度: <span class="humidity"></span></p> -->
+        </div>
+      </div>
+      <button id="logIn" onclick="logIn()">Log in</button>
+    </div>
+    <div class="sideBar">
+      <a class="bar1" href="../index/index.html">
+        <img
+          src="https://img.icons8.com/material-outlined/50/344863/home-page.png"
+        />
+      </a>
+
+      <a class="bar2" href="../second_page/calendar.html">
+        <img
+          src="https://img.icons8.com/material-rounded/50/344863/tear-off-calendar.png"
+      /></a>
+      <a class="bar3" href="../third_page/todolist.html"
+        ><img src="https://img.icons8.com/windows/50/344863/todo-list.png"
+      /></a>
+      <a class="bar4" href="../third_page/todolist.html#pomodoro"
+        ><img
+          src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/50/344863/external-pomodoro-date-and-time-tanah-basah-glyph-tanah-basah.png"
+      /></a>
+    </div>
+    <div class="container">
+      <div class="month">
+        <img
+          class="prevButton"
+          src="https://img.icons8.com/ios-glyphs/45/FFFFFF/chevron-left.png"
+        />
+        <h2 class="monthYear"></h2>
+        <img
+          class="nextButton"
+          src="https://img.icons8.com/ios-glyphs/60/FFFFFF/chevron-right.png"
+        />
+      </div>
+      <div class="content">
+        <div class="left">
+          <div class="calendar">
+            <div class="weekdays">
+              <div class="week">Sun</div>
+              <div class="week">Mon</div>
+              <div class="week">Tue</div>
+              <div class="week">Wed</div>
+              <div class="week">Thu</div>
+              <div class="week">Fri</div>
+              <div class="week">Sat</div>
+            </div>
+            <div class="days">
+              <!-- <div class="day prev">30</div>
+              <div class="day appointment">1</div>
+              <div class="day today">8</div>
+              <div class="day active">18</div>
+              <div class="day next">1</div> k-->
+            </div>
+          </div>
+          <div class="goto">
+            <div class="gotoDate">
+              <input type="text" placeholder="mm/yyyy" class="dateInput" />
+              <button class="gotoButton">go</button>
+            </div>
+            <button class="todayButton">today</button>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="todayDate">
+            <div class="eventDay">Wed</div>
+            <div class="eventDate">26 April 2023</div>
+          </div>
+          <div class="eventsContainer">
+            <!-- <div class="event">
+              <div class="title">
+                <img
+                  src="https://img.icons8.com/ios-glyphs/10/eb6c4c/filled-circle.png"
+                />
+                <h3 class="eventTitle">Event 1</h3>
+              </div>
+              <div class="eventTime">10:00AM - 12:00PM</div>
+            </div> -->
+          </div>
+          <div class="addEventContainer">
+            <div class="addEventHeader">
+              <div class="title">Add Event</div>
+              <img
+                class="close"
+                src="https://img.icons8.com/ios-glyphs/30/344863/delete-sign.png"
+              />
+            </div>
+            <div class="addEventBody">
+              <div class="addEventInput">
+                <input type="text" placeholder="Event Name" class="eventName" />
+              </div>
+              <div class="addEventInput">
+                <input
+                  type="text"
+                  placeholder="Event Time From"
+                  class="eventTimeFrom"
+                />
+              </div>
+              <div class="addEventInput">
+                <input
+                  type="text"
+                  placeholder="Event Time to"
+                  class="eventTimeTo"
+                />
+              </div>
+            </div>
+            <div class="addEventFooter">
+              <button class="addEventBtn">add event</button>
+            </div>
+          </div>
+        </div>
+        <div class="addOnBtn">
+          <img src="https://img.icons8.com/windows/60/eb6c4c/plus-math.png" />
+        </div>
+      </div>
+    </div>
+    <form class="signInForm" style="display: none">
+      <div class="signInIcon">
+        <img
+          src="https://img.icons8.com/material-rounded/120/344863/user.png"
+        />
+      </div>
+      <div class="signInContent">
+        <p class="formTitle">Sign in</p>
+        <br />
+        <div class="formContent">
+          <input type="email" id="email" placeholder="Email" />
+          <br />
+          <input type="password" id="password" placeholder="Password" />
+        </div>
+        <br />
+        <button class="signInBtn">Sign in</button>
+      </div>
+    </form>
+  </body>
+  <script src="./calendar.js"></script>
+  <!-- Google API -->
+  <!-- <script async defer src="https://apis.google.com/js/api.js"></script> -->
+</html>

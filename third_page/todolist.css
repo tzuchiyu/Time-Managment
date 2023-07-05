@@ -1,0 +1,620 @@
+@charset "UTF-8";
+:root {
+  --colorOrange: #eb6c4c;
+  --colorBlue: rgba(52, 72, 99, 1);
+  --colorBG: rgba(245, 235, 228, 1);
+  --colorLightBlue: rgba(155, 195, 218, 1);
+  --colorLightBrown: rgba(92, 68, 53, 0.29);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+.sideBar {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  z-index: 100;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+  width: 100px;
+}
+
+.sideBar {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  z-index: 100;
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 350px;
+  width: 90px;
+}
+
+.sideBar a {
+  display: block;
+  cursor: pointer;
+}
+
+.sideBar a:hover {
+  transform: scale(1.1);
+}
+
+.sideBar a:active {
+  transform: scale(0.9);
+}
+
+.topBar {
+  background-color: var(--colorBG);
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topBar .icon {
+  padding-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+}
+.topBar .icon img {
+  width: 80px;
+}
+.topBar #weatherContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.topBar #weatherContainer .area {
+  border-radius: 50px;
+  padding: 2px 1vw 2px 2vw;
+  border: 3px solid var(--colorOrange);
+  color: var(--colorOrange);
+  font-size: 1.5rem;
+}
+.topBar #weatherContainer p {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--colorOrange);
+  text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+}
+.topBar #logIn {
+  border: none;
+  background-color: var(--colorOrange);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  margin-right: 40px;
+}
+.topBar #logIn:hover {
+  transform: scale(1.1);
+}
+.topBar #logIn:active {
+  transform: scale(0.9);
+}
+
+.totop {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 100;
+  background-color: rgba(52, 72, 99, 0.872);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.totop:hover {
+  transform: scale(1.1);
+}
+.totop:active {
+  transform: scale(0.9);
+}
+
+i {
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--colorBG);
+}
+
+header {
+  width: 100%;
+  margin: 130px 0 30px 45px;
+}
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--colorBlue);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-left: 80px;
+}
+main div.filter {
+  width: 90%;
+  height: 70vh;
+  background-color: var(--colorLightBrown);
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+}
+main div.filter form {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+main div.filter form input[type=number] {
+  width: 80px;
+  font-size: 1.2rem;
+  padding-left: 10px;
+}
+main div.filter form input {
+  margin: 0.2rem;
+  border-radius: 30px;
+  width: 25vw;
+  font-size: 1.2rem;
+  padding: 10px 0 10px 30px;
+}
+main div.filter form input:focus {
+  background-color: var(--colorLightBlue);
+}
+main div.filter form button {
+  margin-left: 20px;
+  background-color: var(--colorBlue);
+  color: white;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  padding: 0px 20px;
+}
+main div.filter form button:hover {
+  background-color: var(--colorOrange);
+  color: white;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+main div.filter form button:active {
+  transform: scale(0.9);
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+main div.filter input,
+main div.filter button {
+  border: none;
+  padding: 0px 0.5rem;
+  cursor: pointer;
+}
+main div.filter .sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main div.filter .sort button {
+  margin-left: 20px;
+  background-color: var(--colorBlue);
+  color: white;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  padding: 15px 20px;
+}
+main div.filter .sort button:hover {
+  background-color: var(--colorOrange);
+  color: white;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+main div.filter .sort button:active {
+  transform: scale(0.9);
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+main .signInForm {
+  background-color: rgba(53, 73, 100, 0.902);
+  padding: 25px 10px;
+  border-radius: 15px;
+  position: fixed;
+  top: 30%;
+  width: 500px;
+  height: 500px;
+  color: white;
+  border: 2px solid var(--colorBG);
+}
+main .signInForm .signInIcon {
+  position: absolute;
+  top: -60px;
+  left: 180px;
+  background-color: var(--colorBG);
+  border-radius: 50%;
+  padding: 9px;
+  border: 5px solid var(--colorBlue);
+}
+main .signInForm .signInContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .signInForm .signInContent .formTitle {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+main .signInForm .signInContent .formContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+main .signInForm .signInContent .formContent input {
+  width: 80%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+}
+main .signInForm .signInContent .signInBtn {
+  display: flex;
+  padding: 8px 20px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--colorBlue);
+}
+main .signInForm .signInContent .signInBtn:hover {
+  background-color: var(--colorOrange);
+  color: white;
+  transform: scale(1.1);
+}
+
+section {
+  width: 100%;
+  height: 75%;
+  margin: 35px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+section .todolist {
+  display: flex;
+  margin: 12px;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+section .todolist .todoText {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px 0 0 10px;
+}
+section .todolist .todoTime {
+  background-color: white;
+  padding: 10px 20px;
+}
+section .todolist button.complete {
+  background-color: white;
+  color: var(--colorBlue);
+  font-size: 2.5rem;
+}
+section .todolist button.delete {
+  background-color: white;
+  color: var(--colorOrange);
+  font-size: 2.5rem;
+  border-radius: 0 10px 10px 0;
+}
+section button.complete:hover {
+  font-size: 3.5rem;
+  padding: 3px 4.2px;
+}
+section button.delete:hover {
+  font-size: 3.25rem;
+  padding: 3.4px 7px;
+}
+section button.complete:active {
+  font-size: 20px;
+  padding: 7.9px 7.8px;
+}
+section button.delete:active {
+  font-size: 20px;
+  padding: 7.9px 10px;
+}
+section .done {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+
+.warningBox {
+  background-color: var(--colorBG);
+  box-shadow: 12px 12px 15px rgba(0, 0, 0, 0.374);
+  position: fixed;
+  width: 850px;
+  height: 350px;
+  z-index: 100;
+  border-radius: 30px;
+  top: 45%;
+  left: 28%;
+}
+.warningBox .warningIcon > i {
+  display: flex;
+  position: absolute;
+  font-size: 100px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: var(--colorOrange);
+}
+.warningBox .warningText {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding-left: 70px;
+}
+.warningBox .warningText .warningTitle {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--colorOrange);
+  display: flex;
+  align-items: center;
+  padding: 40px 0 20px 0;
+}
+.warningBox .warningText .warningWord {
+  font-size: 2.3rem;
+  text-align: center;
+  padding: 30px 0 50px 50px;
+}
+.warningBox .warningText .warningButton {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.warningBox .warningText .warningButton button {
+  background-color: var(--colorBlue);
+  color: white;
+  border: 0px;
+  margin: 0 2rem;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 2rem;
+}
+.warningBox .warningText .warningButton .yesButton:hover {
+  background-color: var(--colorOrange);
+  transform: scale(1.1);
+}
+.warningBox .warningText .warningButton .yesButton:active {
+  transform: scale(1);
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+.warningBox .warningText .noButton:hover {
+  background-color: var(--colorOrange);
+  transform: scale(1.1);
+}
+.warningBox .warningText .noButton:active {
+  transform: scale(1);
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1); /* 初始状态 */
+  }
+  100% {
+    transform: scale(0); /* 结束状态 */
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(0); /* 初始状态 */
+  }
+  100% {
+    transform: scale(1); /* 结束状态 */
+  }
+}
+@media screen and (max-width: 1100px) {
+  body {
+    background: var(--colorBlue);
+  }
+  .topBar .icon {
+    gap: 0px;
+    padding-left: 25px;
+  }
+  .topBar #weatherContainer {
+    gap: 8px;
+    margin-left: 25px;
+  }
+  .sideBar {
+    left: 1%;
+  }
+  header {
+    width: 100%;
+    margin: 130px 0 30px 45px;
+  }
+  header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--colorBG);
+  }
+  main div.filter {
+    background-color: var(--colorBG);
+  }
+  main div.filter form input[type=number] {
+    width: 65px;
+    padding-left: 3px;
+    box-shadow: inset 0px 0px 12px 1px rgba(52, 72, 99, 0.3);
+  }
+  main div.filter form input {
+    width: 28vw;
+    padding-left: 15px;
+    box-shadow: inset 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+  }
+  main div.filter form button {
+    margin-left: 20px;
+    padding: 0px 15px;
+  }
+  main div.filter .sort button {
+    padding: 15px 15px;
+  }
+  main .signInForm {
+    background-color: rgba(53, 73, 100, 0.902);
+    padding: 25px 10px;
+    border-radius: 15px;
+    position: fixed;
+    top: 30%;
+    width: 600px;
+    height: 600px;
+    color: white;
+    border: 2px solid var(--colorBG);
+  }
+  main .signInForm .signInIcon {
+    position: absolute;
+    top: -90px;
+    left: 210px;
+    background-color: var(--colorBG);
+    border-radius: 50%;
+    padding: 9px;
+    border: 5px solid var(--colorBlue);
+  }
+  main .signInForm .signInContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .signInForm .signInContent .formTitle {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  main .signInForm .signInContent .formContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+  }
+  main .signInForm .signInContent .formContent input {
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+  }
+  main .signInForm .signInContent .signInBtn {
+    display: flex;
+    padding: 8px 20px;
+    border-radius: 15px;
+    border: none;
+    color: var(--colorBlue);
+  }
+  main .signInForm .signInContent .signInBtn:hover {
+    background-color: var(--colorOrange);
+    color: white;
+    transform: scale(1.1);
+  }
+  main .signInForm {
+    padding: 25px 10px;
+    width: 500px;
+    height: 480px;
+  }
+  main .signInForm .signInIcon {
+    top: -90px;
+    left: 170px;
+  }
+  main .signInForm .signInContent .formContent {
+    width: 100%;
+    padding: 20px;
+  }
+  main .signInForm .signInContent .formContent input {
+    border-radius: 10px;
+  }
+  main .signInForm .signInContent .signInBtn {
+    padding: 8px 20px;
+  }
+  section {
+    width: 100%;
+    height: 75%;
+    margin: 35px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  section .todolist {
+    display: flex;
+    margin: 12px;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  section .todolist .todoText {
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+  }
+  section .todolist .todoTime {
+    background-color: white;
+  }
+  section .todolist button.complete {
+    background-color: white;
+    color: var(--colorBlue);
+  }
+  section .todolist button.delete {
+    background-color: white;
+    color: var(--colorOrange);
+    border-radius: 0 10px 10px 0;
+  }
+  section button.complete:hover {
+    padding: 3px 4.2px;
+  }
+  section button.delete:hover {
+    padding: 3.4px 7px;
+  }
+  section button.complete:active {
+    padding: 7.9px 7.8px;
+  }
+  section button.delete:active {
+    padding: 7.9px 10px;
+  }
+  section .done {
+    opacity: 0.3;
+    text-decoration: line-through;
+  }
+}/*# sourceMappingURL=todolist.css.map */

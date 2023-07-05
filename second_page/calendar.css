@@ -1,0 +1,632 @@
+:root {
+  --colorOrange: #eb6c4c;
+  --colorBlue: rgba(52, 72, 99, 1);
+  --colorBG: rgba(245, 235, 228, 1);
+  --colorLightBlue: rgba(155, 195, 218, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--colorBG);
+}
+
+.sideBar {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  z-index: 100;
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 350px;
+  width: 90px;
+}
+
+.sideBar a {
+  display: block;
+  cursor: pointer;
+}
+
+.sideBar a:hover {
+  transform: scale(1.1);
+}
+
+.sideBar a:active {
+  transform: scale(0.9);
+}
+
+.topBar {
+  background-color: var(--colorBG);
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topBar .icon {
+  padding-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+}
+.topBar .icon img {
+  width: 80px;
+}
+.topBar #weatherContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.topBar #weatherContainer .area {
+  border-radius: 50px;
+  padding: 2px 1vw 2px 2vw;
+  border: 3px solid var(--colorOrange);
+  color: var(--colorOrange);
+  font-size: 1.5rem;
+}
+.topBar #weatherContainer p {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--colorOrange);
+  text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+}
+.topBar #logIn {
+  border: none;
+  background-color: var(--colorOrange);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  margin-right: 40px;
+}
+.topBar #logIn:hover {
+  transform: scale(1.1);
+}
+.topBar #logIn:active {
+  transform: scale(0.9);
+}
+
+div.container {
+  width: 87vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(92, 68, 53, 0.29);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  margin: 110px 0 50px 80px;
+}
+div.container .month {
+  width: 80vw;
+  height: 12vh;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 10px;
+  color: var(--colorBlue);
+}
+div.container .month .prevButton,
+div.container .month .nextButton {
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--colorBlue);
+}
+div.container .month .prevButton:hover,
+div.container .month .nextButton:hover {
+  transform: scale(1.1);
+}
+div.container .month .prevButton:active,
+div.container .month .nextButton:active {
+  transform: scale(0.8);
+}
+div.container .content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+div.container .content .left {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+div.container .content .left .calendar {
+  width: 48vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 2px;
+  gap: 10px;
+  background: #f5ebe4;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+div.container .content .left .calendar .weekdays {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+div.container .content .left .calendar .weekdays .week {
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--colorBlue);
+}
+div.container .content .left .calendar .days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 5px;
+}
+div.container .content .left .calendar .days .day {
+  width: 14.2857142857%;
+  height: 11vh;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.119);
+  padding-top: 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+div.container .content .left .calendar .days .prev,
+div.container .content .left .calendar .days .next {
+  color: gray;
+}
+div.container .content .left .calendar .days .today {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  z-index: 1;
+}
+div.container .content .left .calendar .days .today::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  background-color: var(--colorBlue);
+  font-size: 2rem;
+  border-radius: 50%;
+}
+div.container .content .left .calendar .days .active {
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+div.container .content .left .calendar .days .active::before {
+  content: "";
+  background-color: rgba(92, 68, 53, 0.29);
+  position: absolute;
+  top: -1px;
+  border-radius: 3px;
+  z-index: -1;
+  width: 102%;
+  height: 11.1vh;
+}
+div.container .content .left .appointment {
+  position: relative;
+}
+div.container .content .left .appointment::after {
+  content: "";
+  position: absolute;
+  background-color: var(--colorOrange);
+  width: 55%;
+  height: 12px;
+  bottom: 10px;
+  border-radius: 10px;
+}
+div.container .content .left .day:hover {
+  cursor: pointer;
+  background-color: var(--colorBlue);
+  color: white;
+}
+div.container .content .left .goto {
+  width: 48vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 3vw;
+  background: #f5ebe4;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  margin-bottom: 8px;
+}
+div.container .content .left .goto .gotoDate .dateInput {
+  padding: 10px;
+  border: 1px solid orange;
+  border-radius: 5px;
+  border: none;
+  background: #d9d9d9;
+  border-radius: 40px;
+  font-size: 1.2rem;
+}
+div.container .content .left .goto .gotoDate .gotoButton {
+  padding: 10px 1.2vw;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  background: var(--colorOrange);
+  border-radius: 40px;
+}
+div.container .content .left .goto .todayButton {
+  padding: 10px 1.2vw;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  background: var(--colorOrange);
+  border-radius: 40px;
+}
+div.container .content .left .goto .todayButton:hover,
+div.container .content .left .goto .gotoButton:hover {
+  transform: scale(1.1);
+  background-color: var(--colorBlue);
+}
+div.container .content .left .goto .todayButton:active,
+div.container .content .left .goto .gotoButton:active {
+  transform: scale(0.9);
+}
+div.container .content .right {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+div.container .content .right .todayDate {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--colorBlue);
+}
+div.container .content .right .todayDate .eventDay {
+  font-size: 2rem;
+  font-weight: bold;
+}
+div.container .content .right .todayDate .eventDate {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: gray;
+}
+div.container .content .right .eventsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+}
+div.container .content .right .eventsContainer .event {
+  width: 100%;
+  background: linear-gradient(92.9deg, #f5ebe4 1.02%, rgba(245, 235, 228, 0) 100.03%);
+  border-radius: 54px;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding: 8px 0 8px 10%;
+}
+div.container .content .right .eventsContainer .event .title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+div.container .content .right .eventsContainer .event .title h3 {
+  padding: 3px;
+}
+div.container .content .right .eventsContainer .event .eventTime {
+  color: gray;
+}
+div.container .content .right .event:hover {
+  background: linear-gradient(92.9deg, rgb(52, 72, 99), rgba(52, 72, 99, 0.7));
+  color: white;
+}
+div.container .content .right .noEvent h3 {
+  padding: 8px;
+}
+div.container .content .addEventContainer {
+  width: 28%;
+  position: absolute;
+  background-color: var(--colorBG);
+  bottom: 40px;
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+div.container .content .active {
+  max-height: 300px;
+  padding: 20px;
+}
+div.container .content .addEventHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: var(--colorBlue);
+  font-size: 1.8rem;
+}
+div.container .content .close {
+  cursor: pointer;
+}
+div.container .content .addEventBody .addEventInput {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 5px 30px;
+}
+div.container .content .addEventBody .addEventInput input {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 5px;
+  background-color: var(--colorBG);
+  width: 85%;
+  font-size: 1.3rem;
+}
+div.container .content .addEventBody .addEventInput input:hover {
+  border-bottom: 1px solid gray;
+}
+div.container .content .addEventBody .addEventInput input:focus {
+  border-bottom: 1px solid black;
+  outline: none;
+}
+div.container .content .addEventBody .eventTimeTo {
+  margin-bottom: 5px;
+}
+div.container .content .addEventFooter {
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.container .content .addEventFooter .addEventBtn {
+  border: none;
+  background-color: var(--colorOrange);
+  color: white;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  margin: 20px;
+}
+div.container .content .addEventFooter .addEventBtn:hover {
+  background-color: var(--colorBlue);
+  transform: scale(1.1);
+}
+div.container .content .addEventFooter .addEventBtn:active {
+  transform: scale(0.9);
+}
+div.container .content .addOnBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--colorOrange);
+  border: 2px solid var(--colorOrange);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  right: 90px;
+  opacity: 0.6;
+}
+
+.signInForm {
+  background-color: rgba(53, 73, 100, 0.902);
+  padding: 25px 10px;
+  border-radius: 15px;
+  position: fixed;
+  top: 30%;
+  width: 500px;
+  height: 500px;
+  color: white;
+  border: 2px solid var(--colorBG);
+}
+.signInForm .signInIcon {
+  position: absolute;
+  top: -60px;
+  left: 180px;
+  background-color: var(--colorBG);
+  border-radius: 50%;
+  padding: 9px;
+  border: 5px solid var(--colorBlue);
+}
+.signInForm .signInContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signInForm .signInContent .formTitle {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+.signInForm .signInContent .formContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+.signInForm .signInContent .formContent input {
+  width: 80%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+}
+.signInForm .signInContent .signInBtn {
+  display: flex;
+  padding: 8px 20px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--colorBlue);
+}
+.signInForm .signInContent .signInBtn:hover {
+  background-color: var(--colorOrange);
+  color: white;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    background: var(--colorBlue);
+  }
+  .topBar .icon {
+    gap: 0px;
+    padding-left: 25px;
+  }
+  .topBar #weatherContainer {
+    gap: 8px;
+    margin-left: 25px;
+  }
+  .sideBar {
+    left: 1%;
+  }
+  div.container {
+    flex-direction: column;
+    background: 0;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 110px 0 100px 80px;
+  }
+  div.container .month {
+    color: var(--colorBG);
+  }
+  div.container .month .prevButton,
+  div.container .month .nextButton {
+    background-color: var(--colorOrange);
+  }
+  div.container .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  div.container .content .left {
+    width: 50vw;
+    flex-direction: column;
+    gap: 10px;
+  }
+  div.container .content .left .calendar {
+    width: 70vw;
+    background: #f5ebe4;
+  }
+  div.container .content .left .goto {
+    width: 70vw;
+  }
+  div.container .content .right {
+    width: 70vw;
+    background-color: var(--colorBG);
+    border-radius: 30px;
+    height: 500px;
+  }
+  div.container .content .right .todayDate {
+    color: var(--colorBG);
+    padding-top: 20px;
+  }
+  div.container .content .right .todayDate .eventDay {
+    font-weight: bold;
+    color: var(--colorBlue);
+  }
+  div.container .content .right .todayDate .eventDate {
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+  }
+  div.container .content .right .eventsContainer .event {
+    width: 90%;
+    background: linear-gradient(92.9deg, #f5ebe4 1.02%, rgba(245, 235, 228, 0) 100.03%);
+  }
+  div.container .content .right .event:hover {
+    background: linear-gradient(92.9deg, rgb(52, 72, 99), rgba(52, 72, 99, 0.7));
+    color: white;
+  }
+  div.container .content .addEventContainer {
+    width: 50%;
+    background-color: var(--colorBlue);
+    bottom: -500px;
+  }
+  div.container .content .addEventHeader {
+    color: var(--colorBG);
+  }
+  div.container .content .addEventBody .addEventInput input {
+    border-radius: 15px;
+    padding-left: 15px;
+  }
+  div.container .content .close {
+    background-color: var(--colorBG);
+    border-radius: 50%;
+    padding: 5px;
+  }
+  div.container .content .addEventFooter .addEventBtn:hover {
+    background-color: var(--colorBG);
+    color: var(--colorOrange);
+    border: 3px solid var(--colorOrange);
+  }
+  div.container .content .addOnBtn {
+    top: -80px;
+    right: -30vw;
+  }
+  .signInForm {
+    z-index: 10;
+    padding: 25px 10px;
+    width: 500px;
+    height: 480px;
+  }
+  .signInForm .signInIcon {
+    top: -90px;
+    left: 170px;
+  }
+  .signInForm .signInContent .formContent {
+    width: 100%;
+    padding: 20px;
+  }
+  .signInForm .signInContent .formContent input {
+    border-radius: 10px;
+  }
+  .signInForm .signInContent .signInBtn {
+    padding: 8px 20px;
+    color: white;
+    background-color: var(--colorBlue);
+  }
+}/*# sourceMappingURL=calendar.css.map */
