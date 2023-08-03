@@ -1,0 +1,622 @@
+:root {
+  --colorOrange: #eb6c4c;
+  --colorBlue: rgba(52, 72, 99, 1);
+  --colorBG: rgba(245, 235, 228, 1);
+  --colorLightBlue: rgba(155, 195, 218, 1);
+  --colorLightBrown: rgba(92, 68, 53, 0.29);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+.sideBar {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  z-index: 100;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+  width: 100px;
+}
+.sideBar {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  z-index: 100;
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 350px;
+  width: 90px;
+}
+.sideBar a {
+  display: block;
+  cursor: pointer;
+}
+.sideBar a:hover {
+  transform: scale(1.1);
+}
+.sideBar a:active {
+  transform: scale(0.9);
+}
+.topBar {
+  background-color: var(--colorBG);
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .icon {
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    img {
+      width: 80px;
+    }
+  }
+  #weatherContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    .area {
+      border-radius: 50px;
+      padding: 2px 1vw 2px 2vw;
+      border: 3px solid var(--colorOrange);
+      color: var(--colorOrange);
+      font-size: 1.5rem;
+    }
+    p {
+      padding: 5px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: var(--colorOrange);
+      text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+    }
+  }
+  #logIn {
+    border: none;
+    background-color: var(--colorOrange);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    margin-right: 40px;
+  }
+  #logIn:hover {
+    transform: scale(1.1);
+  }
+  #logIn:active {
+    transform: scale(0.9);
+  }
+}
+.totop {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 100;
+  background-color: rgba(52, 72, 99, 0.872);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+i {
+  pointer-events: none;
+}
+body {
+  background-color: var(--colorBG);
+}
+header {
+  width: 100%;
+  margin: 130px 0 30px 45px;
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--colorBlue);
+  }
+}
+main {
+  display: flex;
+  justify-content: center;
+  margin-left: 80px;
+  div.filter {
+    width: 90%;
+    height: 70vh;
+    background-color: var(--colorLightBrown);
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    form {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      input[type="number"] {
+        width: 80px;
+        font-size: 1.2rem;
+        padding-left: 10px;
+      }
+      input {
+        margin: 0.2rem;
+        border-radius: 30px;
+        width: 25vw;
+        font-size: 1.2rem;
+        padding: 10px 0 10px 30px;
+      }
+      input:focus {
+        background-color: var(--colorLightBlue);
+      }
+      button {
+        margin-left: 20px;
+        background-color: var(--colorBlue);
+        color: white;
+        border-radius: 30px;
+        font-size: 1.3rem;
+        padding: 0px 20px;
+      }
+      button:hover {
+        background-color: var(--colorOrange);
+        color: white;
+        transition: 0.2s;
+        transform: scale(1.1);
+      }
+      button:active {
+        transform: scale(0.9);
+        box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+      }
+    }
+    input,
+    button {
+      border: none;
+      padding: 0px 0.5rem;
+      cursor: pointer;
+    }
+
+    .sort {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        margin-left: 20px;
+        background-color: var(--colorBlue);
+        color: white;
+        border-radius: 30px;
+        font-size: 1.3rem;
+        padding: 15px 20px;
+      }
+      button:hover {
+        background-color: var(--colorOrange);
+        color: white;
+        transition: 0.2s;
+        transform: scale(1.1);
+      }
+      button:active {
+        transform: scale(0.9);
+        box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .signInForm {
+    background-color: rgba(53, 73, 100, 0.902);
+    padding: 25px 10px;
+    border-radius: 15px;
+    position: fixed;
+    top: 30%;
+    width: 500px;
+    height: 500px;
+    color: white;
+    border: 2px solid var(--colorBG);
+    .signInIcon {
+      position: absolute;
+      top: -60px;
+      left: 180px;
+      background-color: var(--colorBG);
+      border-radius: 50%;
+      padding: 9px;
+      border: 5px solid var(--colorBlue);
+    }
+    .signInContent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .formTitle {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+      }
+      .formContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        input {
+          width: 80%;
+          padding: 10px 15px;
+          border-radius: 10px;
+          border: none;
+          font-size: 1.2rem;
+        }
+      }
+      .signInBtn {
+        display: flex;
+        padding: 8px 20px;
+        border-radius: 15px;
+        border: none;
+        font-size: 1.2rem;
+        color: var(--colorBlue);
+      }
+      .signInBtn:hover {
+        background-color: var(--colorOrange);
+        color: white;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+section {
+  width: 100%;
+  height: 75%;
+  margin: 35px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  .todolist {
+    display: flex;
+    margin: 12px;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    .todoText {
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 10px 0 0 10px;
+    }
+    .todoTime {
+      background-color: white;
+      padding: 10px 20px;
+    }
+    button.complete {
+      background-color: white;
+      color: var(--colorBlue);
+      font-size: 2.5rem;
+      // padding: 7.7px 12px;
+    }
+    button.delete {
+      background-color: white;
+      color: var(--colorOrange);
+      font-size: 2.5rem;
+      border-radius: 0 10px 10px 0;
+      // padding: 7.7px 12px;
+    }
+  }
+  button.complete:hover {
+    font-size: 3.5rem;
+    padding: 3px 4.2px;
+  }
+  button.delete:hover {
+    font-size: 3.25rem;
+    padding: 3.4px 7px;
+  }
+  button.complete:active {
+    font-size: 20px;
+    padding: 7.9px 7.8px;
+  }
+  button.delete:active {
+    font-size: 20px;
+    padding: 7.9px 10px;
+  }
+
+  .done {
+    opacity: 0.3;
+    text-decoration: line-through;
+  }
+}
+
+.warningBox {
+  background-color: var(--colorBG);
+  box-shadow: 12px 12px 15px rgba(0, 0, 0, 0.374);
+  position: fixed;
+  width: 850px;
+  height: 350px;
+  z-index: 100;
+  border-radius: 30px;
+  top: 45%;
+  left: 28%;
+  .warningIcon > i {
+    display: flex;
+    position: absolute;
+    font-size: 100px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: var(--colorOrange);
+  }
+  .warningText {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 70px;
+    .warningTitle {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: var(--colorOrange);
+      display: flex;
+      align-items: center;
+      padding: 40px 0 20px 0;
+    }
+    .warningWord {
+      font-size: 2.3rem;
+      text-align: center;
+      padding: 30px 0 50px 50px;
+    }
+    .warningButton {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      button {
+        background-color: var(--colorBlue);
+        color: white;
+        border: 0px;
+        margin: 0 2rem;
+        border-radius: 20px;
+        padding: 15px 30px;
+        font-size: 2rem;
+      }
+      .yesButton:hover {
+        background-color: var(--colorOrange);
+        transform: scale(1.1);
+      }
+      .yesButton:active {
+        transform: scale(1);
+        box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+      }
+    }
+    .noButton:hover {
+      background-color: var(--colorOrange);
+      transform: scale(1.1);
+    }
+    .noButton:active {
+      transform: scale(1);
+      box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+@keyframes scaleDown {
+  0% {
+    transform: scale(1); /* 初始状态 */
+  }
+  100% {
+    transform: scale(0); /* 结束状态 */
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(0); /* 初始状态 */
+  }
+  100% {
+    transform: scale(1); /* 结束状态 */
+  }
+}
+//--------------------------------------
+@media screen and (max-width: 1100px) {
+  body {
+    background: var(--colorBlue);
+  }
+  .topBar {
+    .icon {
+      gap: 0px;
+      padding-left: 25px;
+    }
+    #weatherContainer {
+      gap: 8px;
+      margin-left: 25px;
+    }
+  }
+  .sideBar {
+    left: 1%;
+  }
+  header {
+    width: 100%;
+    margin: 130px 0 30px 45px;
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--colorBG);
+    }
+  }
+  main {
+    div.filter {
+      background-color: var(--colorBG);
+      form {
+        input[type="number"] {
+          width: 65px;
+          padding-left: 3px;
+          box-shadow: inset 0px 0px 12px 1px rgba(52, 72, 99, 0.3);
+        }
+        input {
+          width: 28vw;
+          padding-left: 15px;
+          box-shadow: inset 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+        }
+        button {
+          margin-left: 20px;
+          padding: 0px 15px;
+        }
+      }
+      .sort {
+        button {
+          padding: 15px 15px;
+        }
+      }
+    }
+    .signInForm {
+      background-color: rgba(53, 73, 100, 0.902);
+      padding: 25px 10px;
+      border-radius: 15px;
+      position: fixed;
+      top: 30%;
+      width: 600px;
+      height: 600px;
+      color: white;
+      border: 2px solid var(--colorBG);
+      .signInIcon {
+        position: absolute;
+        top: -90px;
+        left: 210px;
+        background-color: var(--colorBG);
+        border-radius: 50%;
+        padding: 9px;
+        border: 5px solid var(--colorBlue);
+      }
+      .signInContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .formTitle {
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+        }
+        .formContent {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 25px;
+          input {
+            width: 80%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: none;
+          }
+        }
+        .signInBtn {
+          display: flex;
+          padding: 8px 20px;
+          border-radius: 15px;
+          border: none;
+          color: var(--colorBlue);
+        }
+        .signInBtn:hover {
+          background-color: var(--colorOrange);
+          color: white;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .signInForm {
+      padding: 25px 10px;
+      width: 500px;
+      height: 480px;
+      .signInIcon {
+        top: -90px;
+        left: 170px;
+      }
+      .signInContent {
+        .formContent {
+          width: 100%;
+          padding: 20px;
+          input {
+            border-radius: 10px;
+          }
+        }
+        .signInBtn {
+          padding: 8px 20px;
+        }
+      }
+    }
+  }
+  section {
+    width: 100%;
+    height: 75%;
+    margin: 35px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    .todolist {
+      display: flex;
+      margin: 12px;
+      justify-content: center;
+      transition: 0.3s;
+      .todoText {
+        background-color: white;
+        border-radius: 10px 0 0 10px;
+      }
+      .todoTime {
+        background-color: white;
+      }
+      button.complete {
+        background-color: white;
+        color: var(--colorBlue);
+      }
+      button.delete {
+        background-color: white;
+        color: var(--colorOrange);
+        border-radius: 0 10px 10px 0;
+      }
+    }
+    button.complete:hover {
+      padding: 3px 4.2px;
+    }
+    button.delete:hover {
+      padding: 3.4px 7px;
+    }
+    button.complete:active {
+      padding: 7.9px 7.8px;
+    }
+    button.delete:active {
+      padding: 7.9px 10px;
+    }
+
+    .done {
+      opacity: 0.3;
+      text-decoration: line-through;
+    }
+  }
+}
