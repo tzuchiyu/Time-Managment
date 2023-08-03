@@ -109,6 +109,7 @@ body {
 }
 
 div.container {
+  padding-bottom: 30px;
   width: 87vw;
   display: flex;
   flex-direction: column;
@@ -121,7 +122,7 @@ div.container {
 }
 div.container .month {
   width: 80vw;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -136,8 +137,8 @@ div.container .month .nextButton {
   justify-content: center;
   align-items: center;
   padding: 10px 0px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: var(--colorBlue);
 }
 div.container .month .prevButton:hover,
@@ -184,7 +185,7 @@ div.container .content .left .calendar .weekdays {
 div.container .content .left .calendar .weekdays .week {
   justify-content: center;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--colorBlue);
 }
 div.container .content .left .calendar .days {
@@ -203,7 +204,7 @@ div.container .content .left .calendar .days .day {
   border: 1px solid rgba(0, 0, 0, 0.119);
   padding-top: 10px;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 div.container .content .left .calendar .days .prev,
 div.container .content .left .calendar .days .next {
@@ -225,7 +226,7 @@ div.container .content .left .calendar .days .today::before {
   height: 50px;
   top: 0px;
   background-color: var(--colorBlue);
-  font-size: 2rem;
+  font-size: 1.2rem;
   border-radius: 50%;
 }
 div.container .content .left .calendar .days .active {
@@ -266,7 +267,7 @@ div.container .content .left .goto {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 3vw;
+  padding: 30px 3vw;
   background: #f5ebe4;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
@@ -284,7 +285,7 @@ div.container .content .left .goto .gotoDate .gotoButton {
   padding: 5px 1.2vw;
   color: white;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: var(--colorOrange);
   border-radius: 40px;
 }
@@ -292,7 +293,7 @@ div.container .content .left .goto .todayButton {
   padding: 5px 1.2vw;
   color: white;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: var(--colorOrange);
   border-radius: 40px;
 }
@@ -320,11 +321,11 @@ div.container .content .right .todayDate {
   color: var(--colorBlue);
 }
 div.container .content .right .todayDate .eventDay {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 div.container .content .right .todayDate .eventDate {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: gray;
 }
@@ -358,14 +359,14 @@ div.container .content .right .event:hover {
   background: linear-gradient(92.9deg, rgb(52, 72, 99), rgba(52, 72, 99, 0.7));
   color: white;
 }
-div.container .content .right .noEvent h3 {
+div.container .content .right .noEvent h2 {
   padding: 8px;
 }
 div.container .content .addEventContainer {
   width: 28%;
   position: absolute;
   background-color: var(--colorBG);
-  bottom: 40px;
+  bottom: 50px;
   border-radius: 10px;
   max-height: 0;
   overflow: hidden;
@@ -382,7 +383,7 @@ div.container .content .addEventHeader {
   align-items: center;
   padding: 10px 15px;
   color: var(--colorBlue);
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 div.container .content .close {
   cursor: pointer;
@@ -399,7 +400,7 @@ div.container .content .addEventBody .addEventInput input {
   padding: 5px;
   background-color: var(--colorBG);
   width: 85%;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 div.container .content .addEventBody .addEventInput input:hover {
   border-bottom: 1px solid gray;
@@ -423,7 +424,7 @@ div.container .content .addEventFooter .addEventBtn {
   color: white;
   padding: 7px 10px;
   border-radius: 20px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 20px;
 }
 div.container .content .addEventFooter .addEventBtn:hover {
@@ -440,8 +441,8 @@ div.container .content .addOnBtn {
   color: var(--colorOrange);
   border: 2px solid var(--colorOrange);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   position: absolute;
   bottom: 65px;
@@ -584,7 +585,7 @@ div.container .content .addOnBtn {
   div.container .content .addEventContainer {
     width: 50%;
     background-color: var(--colorBlue);
-    bottom: -500px;
+    margin-bottom: 10px;
   }
   div.container .content .addEventHeader {
     color: var(--colorBG);

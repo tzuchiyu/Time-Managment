@@ -1,146 +1,146 @@
-:root {
-  --colorOrange: rgba(235, 108, 76, 1);
-  --colorBlue: rgba(52, 72, 99, 1);
-  --colorBG: rgba(245, 235, 228, 1);
-  --colorLightBlue: rgba(155, 195, 218, 1);
-  --colorLightBrown: rgba(92, 68, 53, 0.29);
-}
-#pomodoro {
-  margin: 0px 0 20px 120px;
-  .title {
-    width: 100%;
-    margin: 0px 0px 40px 0px;
-    h1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 3rem;
-      color: var(--colorBlue);
-    }
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 10vw;
-      .work,
-      .shortBreak,
-      .longBreak {
-        font-size: 1.5rem;
-        width: 18vw;
-        cursor: pointer;
-        background-color: var(--colorBlue);
-        color: white;
-        border: none;
-        padding: 18px 12px;
-        border-radius: 50px;
-        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
-      }
-      .work:hover,
-      .shortBreak:hover,
-      .longBreak:hover {
-        background-color: var(--colorOrange);
-        transform: scale(1.1);
-      }
-      .work:active,
-      .shortBreak:active,
-      .longBreak:active {
-        transform: scale(0.9);
-      }
-      .active {
-        border: 5px solid var(--colorOrange);
-      }
-    }
-  }
-  .timer {
-    border-radius: 50%;
-    border: 8px solid var(--colorBlue);
-    background: var(--colorOrange);
-    font-size: 4.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 330px;
-    height: 330px;
-    color: white;
-    margin: 25px;
-    cursor: default;
-  }
-  .stop {
-    font-size: 1.5rem;
-    width: 12vw;
-    cursor: pointer;
-    background-color: var(--colorBlue);
-    color: white;
-    border: none;
-    padding: 18px 12px;
-    border-radius: 50px;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
-  }
-  .stop:hover {
-    background-color: var(--colorOrange);
-    border: none;
-    transform: scale(1.1);
-  }
-  .stop:active {
-    transform: scale(0.9);
-  }
-}
+// :root {
+//   --colorOrange: rgba(235, 108, 76, 1);
+//   --colorBlue: rgba(52, 72, 99, 1);
+//   --colorBG: rgba(245, 235, 228, 1);
+//   --colorLightBlue: rgba(155, 195, 218, 1);
+//   --colorLightBrown: rgba(92, 68, 53, 0.29);
+// }
+// #pomodoro {
+//   margin: 0px 0 20px 120px;
+//   .title {
+//     width: 100%;
+//     margin: 0px 0px 40px 0px;
+//     h1 {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       font-size: 3rem;
+//       color: var(--colorBlue);
+//     }
+//   }
+//   .container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     .buttons {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 10vw;
+//       .work,
+//       .shortBreak,
+//       .longBreak {
+//         font-size: 1.5rem;
+//         width: 18vw;
+//         cursor: pointer;
+//         background-color: var(--colorBlue);
+//         color: white;
+//         border: none;
+//         padding: 18px 12px;
+//         border-radius: 50px;
+//         box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+//       }
+//       .work:hover,
+//       .shortBreak:hover,
+//       .longBreak:hover {
+//         background-color: var(--colorOrange);
+//         transform: scale(1.1);
+//       }
+//       .work:active,
+//       .shortBreak:active,
+//       .longBreak:active {
+//         transform: scale(0.9);
+//       }
+//       .active {
+//         border: 5px solid var(--colorOrange);
+//       }
+//     }
+//   }
+//   .timer {
+//     border-radius: 50%;
+//     border: 8px solid var(--colorBlue);
+//     background: var(--colorOrange);
+//     font-size: 4.5rem;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 330px;
+//     height: 330px;
+//     color: white;
+//     margin: 25px;
+//     cursor: default;
+//   }
+//   .stop {
+//     font-size: 1.5rem;
+//     width: 12vw;
+//     cursor: pointer;
+//     background-color: var(--colorBlue);
+//     color: white;
+//     border: none;
+//     padding: 18px 12px;
+//     border-radius: 50px;
+//     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+//   }
+//   .stop:hover {
+//     background-color: var(--colorOrange);
+//     border: none;
+//     transform: scale(1.1);
+//   }
+//   .stop:active {
+//     transform: scale(0.9);
+//   }
+// }
 
-//-------------------------------------
-@media screen and (max-width: 1100px) {
-  #pomodoro {
-    .title {
-      margin: 50px 0px 100px 0px;
-      h1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--colorBG);
-      }
-    }
-    .container {
-      .buttons {
-        gap: 8vw;
-        .work,
-        .shortBreak,
-        .longBreak {
-          width: 18vw;
-          cursor: pointer;
-          background-color: var(--colorOrange);
-          color: white;
-          border: none;
-          padding: 18px 12px;
-          border-radius: 50px;
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
-        }
-        .active {
-          border: 5px solid var(--colorBG);
-        }
-      }
-    }
-    .timer {
-      border: 8px solid var(--colorBG);
-      background: var(--colorOrange);
-      width: 250px;
-      height: 250px;
-      font-size: 3rem;
-    }
-    .stop {
-      width: 12vw;
-      cursor: pointer;
-      background-color: var(--colorOrange);
-      color: white;
-      border: none;
-      padding: 18px 12px;
-      border-radius: 50px;
-      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
-    }
-  }
-}
+// //-------------------------------------
+// @media screen and (max-width: 1100px) {
+//   #pomodoro {
+//     .title {
+//       margin: 50px 0px 100px 0px;
+//       h1 {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         color: var(--colorBG);
+//       }
+//     }
+//     .container {
+//       .buttons {
+//         gap: 8vw;
+//         .work,
+//         .shortBreak,
+//         .longBreak {
+//           width: 18vw;
+//           cursor: pointer;
+//           background-color: var(--colorOrange);
+//           color: white;
+//           border: none;
+//           padding: 18px 12px;
+//           border-radius: 50px;
+//           box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+//         }
+//         .active {
+//           border: 5px solid var(--colorBG);
+//         }
+//       }
+//     }
+//     .timer {
+//       border: 8px solid var(--colorBG);
+//       background: var(--colorOrange);
+//       width: 250px;
+//       height: 250px;
+//       font-size: 3rem;
+//     }
+//     .stop {
+//       width: 12vw;
+//       cursor: pointer;
+//       background-color: var(--colorOrange);
+//       color: white;
+//       border: none;
+//       padding: 18px 12px;
+//       border-radius: 50px;
+//       box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+//     }
+//   }
+// }
